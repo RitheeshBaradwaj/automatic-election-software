@@ -1,0 +1,66 @@
+''' Election voting using registered voterlist 
+voting exits after timer ends then winner is announced 
+''' R = int(input("Select your choice:\n1.Register for voting\n2.Continue with the voting process\n")) 
+if R == 1: 
+F1 = open('registration.txt', 'w') 
+F1.write('') 
+F1.close() 
+F1 = open('registration.txt', 'a') 
+F1.write(input("Enter the voter name\n")) 
+F1.close() 
+elif R == 2: 
+import time 
+START = time.time() 
+from threading import Timer 
+def hello(): 
+'''function execute after timer ends''' 
+global FLAG 
+FLAG = False 
+T = Timer(30, hello) 
+T.start() 
+F1 = open('registration.txt', 'r') 
+S = ["chandu", "ritheesh", "sanketh", "subhash", "akhil", "vivek", "paddu"] 
+S.append(F1.read()) 
+J = I = 1 
+K = [] 
+X = Y = Z = 0 
+FLAG = True 
+while FLAG: 
+C = input("Enter the voter name:") 
+if C in K: 
+J = 0 
+if C in S and J != 0: 
+K.append(C) 
+print("1.lotus\n2.fan\n3.light") 
+D = int(input("Please select any one party symbol to vote your candidate:")) 
+if D == 1: 
+X += 1 
+elif D == 2: 
+Y += 1 
+elif D == 3: 
+Z += 1 
+else: 
+print("Please select the numbers from 1 2 3 only!! ") 
+else: 
+if J == 0: 
+J = 1 
+print("You have voted already!!") 
+else: 
+print("You are not a voter!!") 
+END = time.time() 
+E = END - START 
+if X > Y and X > Z: 
+print("LOTUS is the winner") 
+elif Y > X and Y > Z: 
+print("FAN is the winner") 
+elif Z > X and Z > Y: 
+print("LIGHT is the winner") 
+elif X == Y == Z: 
+print("Draw") 
+elif X == Y: 
+print("Draw between LOTUS and FAN") 
+elif Y == Z: 
+print("Draw between FAN and LIGHT") 
+elif Z == X: 
+print("Draw between LOTUS and LIGHT") 
+print(E) 
