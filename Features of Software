@@ -1,0 +1,7 @@
+Features of our software: 
+1. If you are a voter then only you have chance to vote. 
+2. Repeated voters are not allowed to vote. 
+3. We can set the time period for polling. 
+4. After dead line, if voter tries to vote the result will be displayed to the election officer. 
+5. If there is draw between any of the contestants, it displays draw between them. 
+6. we can either register for voting or we can pledge our vote. 
